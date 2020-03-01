@@ -18,6 +18,7 @@ namespace testing
 
 
         string EnvBrw = Environment.GetEnvironmentVariable("Browser");
+        string URL = Environment.GetEnvironmentVariable("url");
 
 
 
@@ -40,12 +41,7 @@ namespace testing
                     break;
             }
 
-
-
-
-
-
-
+           
             //if (EnvBrw.Equals("Chrome"))
             //{
             //    driver = new ChromeDriver();
@@ -62,15 +58,28 @@ namespace testing
         }
 
         [Test]
+        [TestCategory("smoke")]
         public void test()
         {
-            driver.Url = "http://www.google.com/";
+            switch (URL)
+            {
+                case "google":
+                    driver.Url = "http://www.google.com/";
+                    break;
+                case "amazon":
+                    driver.Url = "http://www.amazon.in/";
+                    break;
+                default:
+                    driver.Url = "http://www.amazon.in/";
+                    break;
+            }
+           
         }
 
         [TearDown]
         public void closeBrowser()
         {
-            driver.Close();
+            driver.Close(); driver.Dispose();
         }
     }
 }
