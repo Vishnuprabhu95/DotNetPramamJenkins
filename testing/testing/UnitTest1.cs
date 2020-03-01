@@ -69,9 +69,9 @@ namespace testing
                 case "amazon":
                     driver.Url = "http://www.amazon.in/";
                     break;
-                default:
-                    driver.Url = "http://www.amazon.in/";
-                    break;
+                //default:
+                //    driver.Url = "http://www.amazon.in/";
+                //    break;
             }
            
         }
