@@ -6,8 +6,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 using System.Threading.Tasks;
 namespace testing
 {
@@ -16,16 +15,56 @@ namespace testing
     {
         IWebDriver driver;
 
+
+
+        string EnvBrw = Environment.GetEnvironmentVariable("Browser");
+
+
+
+
+
         [SetUp]
         public void startBrowser()
         {
-            driver = new ChromeDriver();
+
+            switch(EnvBrw)
+            {
+                case "Chrome":
+                    driver = new ChromeDriver();
+                    break;
+                case "Firefox":
+                    driver = new FirefoxDriver();
+                    break;
+                default:
+                    driver = new ChromeDriver();
+                    break;
+            }
+
+
+
+
+
+
+
+            //if (EnvBrw.Equals("Chrome"))
+            //{
+            //    driver = new ChromeDriver();
+            //}
+            //else if (EnvBrw.Equals("Firefox"))
+            //{
+            //    driver = new FirefoxDriver();
+            //}
+            //else
+            //{
+            //    driver = new ChromeDriver();
+            //}
+
         }
 
         [Test]
         public void test()
         {
-            driver.Url = "http://www.yahoo.co.in";
+            driver.Url = "http://www.google.com/";
         }
 
         [TearDown]
@@ -33,7 +72,5 @@ namespace testing
         {
             driver.Close();
         }
-
-
     }
 }
