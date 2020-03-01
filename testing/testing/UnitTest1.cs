@@ -32,12 +32,15 @@ namespace testing
             {
                 case "Chrome":
                     driver = new ChromeDriver();
+                    Console.WriteLine("Chrome");
                     break;
                 case "Firefox":
                     driver = new FirefoxDriver();
+                    Console.WriteLine("Firefox");
                     break;
                 default:
                     driver = new ChromeDriver();
+                    Console.WriteLine("default browser");
                     break;
             }
 
@@ -65,13 +68,16 @@ namespace testing
             {
                 case "google":
                     driver.Url = "http://www.google.com/";
+                    Console.WriteLine("google");
                     break;
                 case "amazon":
                     driver.Url = "http://www.amazon.in/";
+                    Console.WriteLine("amazon");
                     break;
-                //default:
-                //    driver.Url = "http://www.amazon.in/";
-                //    break;
+                default:
+                    driver.Url = "http://www.amazon.in/";
+                    Console.WriteLine("default url");
+                    break;
             }
            
         }
