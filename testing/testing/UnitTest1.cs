@@ -69,6 +69,9 @@ namespace testing
                 case "amazon":
                     driver.Url = "http://www.amazon.in/";
                     break;
+                case "flipkart":
+                    driver.Url = "http://www.flipkart.com/";
+                    break;
                 default:
                     driver.Url = "http://www.amazon.in/";
                     break;
