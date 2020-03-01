@@ -74,10 +74,10 @@ namespace testing
                     driver.Url = "http://www.amazon.in/";
                     Console.WriteLine("amazon");
                     break;
-                default:
-                    driver.Url = "http://www.amazon.in/";
-                    Console.WriteLine("default url");
-                    break;
+                //default:
+                //    driver.Url = "http://www.amazon.in/";
+                //    Console.WriteLine("default url");
+                //    break;
             }
            
         }
